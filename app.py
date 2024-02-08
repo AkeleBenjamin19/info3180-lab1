@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -12,6 +12,7 @@ def home():
 
 @app.route('/about')
 def about():
+    #image_url = url_for('static', filename='myPic.jpg')
     return render_template('about.html')
 
 @app.errorhandler(404)
